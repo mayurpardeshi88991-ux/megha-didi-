@@ -5,7 +5,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Diwali Megha Didi ❤️</title>
+<style>
 
+/* Tumhara existing CSS code */
+
+/* YAHAN FIREWORK CSS PASTE KARO */
+
+.firework {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  font-size: 30px;
+  animation: blast 1.8s ease-out forwards;
+}
+
+@keyframes blast {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotate(0deg);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.5) rotate(90deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5) rotate(180deg);
+  }
+}
+
+</style>
 <style>
 * {
   margin: 0;
@@ -203,19 +232,29 @@ button:active {
 </div>
 
 <script>
+
 function openCard() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("card").style.display = "block";
 
-  for(let i = 0; i < 25; i++) {
+  const emojis = ["🎆", "✨", "🌟", "💖", "🎇"];
+
+  for (let i = 0; i < 35; i++) {
     let star = document.createElement("div");
-    star.className = "stars";
-    star.innerHTML = ["✨","🌸","💖","⭐","🪔"][i % 5];
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.animationDelay = Math.random() * 3 + "s";
+
+    star.className = "firework";
+    star.innerHTML = emojis[i % emojis.length];
+
+    star.style.left = Math.random() * 90 + 5 + "vw";
+    star.style.top = Math.random() * 75 + "vh";
+    star.style.animationDelay = Math.random() * 2 + "s";
+
     document.body.appendChild(star);
+
+    setTimeout(() => star.remove(), 4000);
   }
 }
+  
 </script>
 
 </body>
