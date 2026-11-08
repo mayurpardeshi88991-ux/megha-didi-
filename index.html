@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Diwali Megha Didi ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg,#260b38,#711b55,#bd572e);
+  font-family: Georgia, serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 430px;
+}
+
+.lamp {
+  font-size: 65px;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 5px orange); }
+  to { filter: drop-shadow(0 0 25px gold); }
+}
+
+h1 {
+  color: #ffdf87;
+  font-size: 30px;
+  margin: 18px 0;
+}
+
+.intro {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+button {
+  border: none;
+  background: linear-gradient(45deg,#ffbd45,#ff6b35);
+  color: #4b1730;
+  padding: 15px 28px;
+  font-size: 17px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ffb347;
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+.card {
+  display: none;
+  background: linear-gradient(145deg,#fff0d2,#ffe0eb);
+  color: #77264b;
+  padding: 30px 22px;
+  border-radius: 22px;
+  border: 4px double #d69a40;
+  box-shadow: 0 0 35px #ffcb76;
+  animation: appear 1s ease;
+}
+
+.card h2 {
+  color: #a83259;
+  font-size: 29px;
+  margin: 15px 0;
+}
+
+.card p {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.heart {
+  font-size: 32px;
+  margin: 15px;
+}
+
+.from {
+  margin-top: 22px;
+  font-weight: bold;
+  color: #a83259;
+  font-size: 19px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  font-size: 20px;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  from { transform: translateY(-50px) rotate(0); }
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div id="intro">
+    <div class="lamp">🪔</div>
+
+    <h1>A Special Diwali Surprise</h1>
+
+    <p class="intro">
+      For Someone Very Special... ❤️<br>
+      A little surprise is waiting for you.
+      <br><br>
+      Megha Didi, this is just for you! 🌸
+    </p>
+
+    <button onclick="openCard()">
+      Open Your Surprise 🎁
+    </button>
+  </div>
+
+  <div class="card" id="card">
+
+    <div style="font-size:55px">🪔✨🌸</div>
+
+    <h2>Happy Diwali</h2>
+
+    <h2>Megha Didi ❤️</h2>
+
+    <div class="heart">💖</div>
+
+    <p>
+      Dear Megha Didi,<br><br>
+
+      Is Diwali par meri bas yahi dua hai
+      ki aapki life hamesha khushiyon se
+      roshan rahe. ✨<br><br>
+
+      Aapki har smile aise hi bani rahe,
+      har sapna poora ho aur aapko
+      life mein dher saari success mile. 🌷<br><br>
+
+      Aap sirf ek special person nahi,
+      balki meri life ki ek precious
+      sister ho. ❤️<br><br>
+
+      Bhagwan Mahadev aapko hamesha
+      khush rakhein aur aapki har
+      mushkil aasan karein. 🙏
+      <br><br>
+
+      Keep smiling, Didi! 
+      You deserve all the happiness
+      in this world. 🥰
+    </p>
+
+    <div class="heart">❤️🪔❤️</div>
+
+    <div class="from">
+      With lots of love,<br>
+      Your Brother – Mayur ❤️
+    </div>
+
+    <p style="margin-top:20px;font-size:19px">
+      Har Har Mahadev 🙏
+    </p>
+
+  </div>
+
+</div>
+
+<script>
+function openCard() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("card").style.display = "block";
+
+  for(let i = 0; i < 25; i++) {
+    let star = document.createElement("div");
+    star.className = "stars";
+    star.innerHTML = ["✨","🌸","💖","⭐","🪔"][i % 5];
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDelay = Math.random() * 3 + "s";
+    document.body.appendChild(star);
+  }
+}
+</script>
+
+</body>
+</html>
